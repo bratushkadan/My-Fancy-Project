@@ -8,7 +8,7 @@ import (
 // https://pkg.go.dev/github.com/golang-jwt/jwt#example-Parse-Hmac
 func Auth() func(*fiber.Ctx) error {
 	return func(ctx *fiber.Ctx) error {
-		ctx.Get()
+		// ctx.Get()
 
 		return nil
 	}

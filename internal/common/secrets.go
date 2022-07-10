@@ -4,4 +4,10 @@ import (
 	"os"
 )
 
-var HmacAuthSecret = []byte(os.Getenv("ACCESS_TOKEN_SECRET"))
+var HmacAuthSecret = []byte(os.Getenv("HMAC_AUTH_SECRET"))
+
+func init() {
+	if len(HmacAuthSecret) == 0 {
+		panic("Emtpy HmacAuthSecret")
+	}
+}

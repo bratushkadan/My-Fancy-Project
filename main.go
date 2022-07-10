@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
-	"os"
+
+	/* should preceed any other repository imports */
+	_ "github.com/bratushkadan/My-Fancy-Project/internal/init"
 
 	"github.com/bratushkadan/My-Fancy-Project/internal/middlewares"
 	"github.com/bratushkadan/My-Fancy-Project/internal/routes"
@@ -33,10 +35,4 @@ func prepareServer() *fiber.App {
 	})
 
 	return app
-}
-
-func handleEnv() {
-	if buildEnv := os.Getenv("BUILD_ENV"); buildEnv == "" || buildEnv == "testing" {
-		godotenv.Load()
-	}
 }
